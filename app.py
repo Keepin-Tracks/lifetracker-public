@@ -25,7 +25,7 @@ max_weight = data['Weight'].max()
 
 # Create Altair line chart
 chart = alt.Chart(data).mark_line().encode(
-    x=alt.X('Date:T', title='Date', axis=alt.Axis(format='%Y-%m-%d')),
+    x=alt.X('Date:O', timeUnit="day", title='Date', axis=alt.Axis(format='%Y-%m-%d')),
     y=alt.Y('Weight:Q', scale=alt.Scale(domain=[min_weight, max_weight])),  # Set y-axis limits
 ).properties(
     title='Weight Over Time'
